@@ -1,4 +1,4 @@
-"""MCP server: lets an AI assistant check VASP inputs and read VASP results.
+"""MCP server: lets an MCP client check VASP inputs and read VASP results.
 
 Every tool only reads files. Nothing is written, run or uploaded, and POTCAR
 contents are never returned (only the dataset names and cutoffs).

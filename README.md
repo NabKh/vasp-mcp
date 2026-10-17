@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 
-An [MCP](https://modelcontextprotocol.io) server that gives AI assistants read-only access to your VASP calculations:
+An [MCP](https://modelcontextprotocol.io) server that gives an MCP client read-only access to your VASP calculations:
 check the inputs **before** you submit, and find out what actually happened **after** the job ends.
 
 Ask your assistant things like:
@@ -68,14 +68,7 @@ uvx --from git+https://github.com/NabKh/vasp-mcp vasp-mcp --help
 
 ## Connect it to your assistant
 
-Claude Code:
-
-```bash
-claude mcp add vasp -- vasp-mcp --root ~/calculations
-```
-
-Claude Desktop and most other MCP clients take a JSON entry like this (for Claude Desktop, in
-`claude_desktop_config.json`):
+Most MCP clients take a JSON entry like this in their configuration file:
 
 ```json
 {

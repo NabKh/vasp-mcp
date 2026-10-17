@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "vasp-mcp"
 dynamic = ["version"]
-description = "MCP server that lets AI assistants check VASP inputs before you submit and read VASP results after: convergence, energies, forces, band gaps, warnings."
+description = "MCP server that lets MCP clients check VASP inputs before you submit and read VASP results after: convergence, energies, forces, band gaps, warnings."
 readme = "README.md"
 license = { file = "LICENSE" }
 authors = [{ name = "Nabil Khossossi" }]
@@ -14,7 +14,7 @@ dependencies = [
   "mcp>=2.3,<3",
   "vasp-lint @ git+https://github.com/NabKh/vasp-lint",
 ]
-keywords = ["vasp", "dft", "mcp", "model-context-protocol", "materials-science", "computational-chemistry", "llm"]
+keywords = ["vasp", "dft", "mcp", "model-context-protocol", "materials-science", "computational-chemistry"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
