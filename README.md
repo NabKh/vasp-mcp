@@ -17,6 +17,24 @@ Ask your assistant things like:
 The assistant gets numbers parsed from OUTCAR, vasprun.xml and the job's standard output, instead of
 guessing from a pasted log.
 
+```mermaid
+flowchart LR
+    U["You"] -->|question| C["MCP client"]
+    C <-->|"tool calls (stdio)"| S["vasp-mcp<br/>read-only"]
+    S --> T1["check_vasp_inputs"]
+    S --> T2["summarize_vasp_run"]
+    S --> T3["scan_vasp_project"]
+    S --> T4["read_vasp_inputs"]
+    S --> T5["list_vasp_lint_rules"]
+    T1 & T4 --> I[("INCAR · POSCAR<br/>POTCAR · KPOINTS")]
+    T2 & T3 --> O[("OUTCAR · OSZICAR<br/>vasprun.xml · slurm-*.out")]
+    T5 --> R[("vasp-lint rules")]
+    subgraph disk ["your folders (limited by --root)"]
+        I
+        O
+    end
+```
+
 ## Tools
 
 | Tool | What it returns |
